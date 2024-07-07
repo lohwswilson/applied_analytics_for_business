@@ -6,10 +6,6 @@ hide:
 <script src="https://cdn.tailwindcss.com"></script>
 
 
-This is for referencing [@hood_2024_mkdocsbibtex]
-
-Another reference \
-
 ## Topic 1: Introduction to Business Analytics
 
 - Overview of business analytics and its role in driving data-driven decision-making
