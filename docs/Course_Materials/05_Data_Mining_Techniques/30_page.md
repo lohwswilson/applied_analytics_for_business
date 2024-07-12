@@ -1,6 +1,5 @@
 ---
 title: Common Data Mining Techniques
----
 author: [Wilson Loh]
 date: 2022-05-01
 ---
