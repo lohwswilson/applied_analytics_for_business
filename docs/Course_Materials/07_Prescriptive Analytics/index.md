@@ -18,3 +18,11 @@ The term "analytics" has become a broad umbrella encompassing various business i
 - **Prescriptive analytics** represents a more advanced approach that offers recommendations to decision-makers by addressing the question, "What should be done?" Techniques like simulation, recommendation engines, and optimization methods are utilized to develop prescriptive models. Nonetheless, accurate predictive models are fundamental prerequisites for constructing prescriptive models.
 
 Each type of business analytics serves a unique purpose and provides valuable insights that help organizations make data-driven decisions. By leveraging these analytics, companies can gain a competitive edge, improve operational efficiency, and better meet the needs of their customers.   (The Four Types of Business Analytics: Driving Better Business Decisions, 2023).
+
+## Lecture Guidance
+
+### Analytics Spectrum
+
+![](./07-01.png)
+
+### 
