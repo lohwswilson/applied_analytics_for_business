@@ -1,0 +1,2317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="['Wilson Loh']">
+      
+      
+        <link rel="canonical" href="https://ansis-ai.github.io/applied_analytics_for_business/Course_Materials/06_Predictive_Analytics/20_page/">
+      
+      
+        <link rel="prev" href="../10_page/">
+      
+      
+        <link rel="next" href="../30_page/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+  <title>ANSIS</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Adlam+Unjoined:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans Adlam Unjoined";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/output.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Understanding Predictive Modeling Techniques - Applied Analytics for Business" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://ansis-ai.github.io/applied_analytics_for_business/assets/images/social/Course_Materials/06_Predictive_Analytics/20_page.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://ansis-ai.github.io/applied_analytics_for_business/Course_Materials/06_Predictive_Analytics/20_page/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Understanding Predictive Modeling Techniques - Applied Analytics for Business" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://ansis-ai.github.io/applied_analytics_for_business/assets/images/social/Course_Materials/06_Predictive_Analytics/20_page.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regression-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://ansis.com.sg" title="Applied Analytics for Business" class="md-header__button md-logo" aria-label="Applied Analytics for Business" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Applied Analytics for Business
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Understanding Predictive Modeling Techniques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ansis-ai/applied_analytics_for_business.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ansis-ai/applied_analytics_for_business.git
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Module Information
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Course Materials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Course_Activities/" class="md-tabs__link">
+          
+  
+    
+  
+  Course Activities
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://ansis.com.sg" title="Applied Analytics for Business" class="md-nav__button md-logo" aria-label="Applied Analytics for Business" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Applied Analytics for Business
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ansis-ai/applied_analytics_for_business.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ansis-ai/applied_analytics_for_business.git
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Course Materials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course Materials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction to Business Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction to Business Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/13_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benefits and Challenges in Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data for Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business Analytics Techniques and Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/50_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem Solving with Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/60_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Descriptive Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Descriptive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Descriptve Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Driven vs Model Driven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Quality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descriptive Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Chart Types and Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visual Encoding and Design Principles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Dashboarding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Dashboarding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Data_Dashboarding/10_Page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Dashboarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Mining Techniques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data Mining Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Mining
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Mining Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Data Mining Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Predictive Analytics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Predictive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Predictive Analytics and its applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Understanding Predictive Modeling Techniques
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Predictive Modeling Techniques
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regression Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps in Regression Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in Regression Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stages-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stages in Regression Analysis:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-in-business-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression in Business World
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-k-nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (K-NN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Nearest Neighbors (K-NN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-k-nn-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How K-NN Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-k-nn-for-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: K-NN for Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: K-NN for Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-fruit" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Fruit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right k
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-k-nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of K-NN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages and Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation and Interpretation of Predictive Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07_Prescriptive%20Analytics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Prescriptive Analytics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Prescriptive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive%20Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Prescriptive Analytics and its applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive%20Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Techniques for Optimization and Decision Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive%20Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identyfing Optimal Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Course_Activities/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Course Activities
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Course Activities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regression Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps in Regression Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in Regression Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stages-in-regression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stages in Regression Analysis:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-in-business-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression in Business World
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-k-nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (K-NN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Nearest Neighbors (K-NN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-k-nn-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How K-NN Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-k-nn-for-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: K-NN for Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: K-NN for Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-fruit" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Fruit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right k
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-k-nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of K-NN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages and Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Understanding Predictive Modeling Techniques</h1>
+
+<div><p>Predictive models encompass mathematical equations and algorithms employed for forecasting future outcomes, including events like customer attrition or sales performance.</p>
+<p>Various predictive modelling techniques are at one's disposal, each suited to particular scenarios:</p>
+<ul>
+<li>Regression</li>
+<li>Decision trees</li>
+<li>Neural networks (A subset of machine learning and pivotal in generative AI tools like ChatGPT)</li>
+<li>Random forests</li>
+<li>K-means clustering</li>
+<li>K-nearest neighbors (k-NN)</li>
+<li>Autoregressive integrated moving average (ARIMA)</li>
+</ul>
+<h2 id="regression-analysis">Regression Analysis<a class="headerlink" href="#regression-analysis" title="Permanent link">¶</a></h2>
+<p>One valuable tool within the realm of predictive analytics is regression analysis, a technique capable of unveiling relationships between variables. Whether it's exploring the connection between two variables (single linear regression) or examining the impact of three or more variables (multiple regression), regression analysis can represent these relationships through mathematical equations. These equations become powerful instruments for predicting outcomes when one of the variables undergoes a change.</p>
+<p><br>
+Harvard Business School Professor Jan Hammond, who instructs the online course Business Analytics, a pivotal component of the Credential of Readiness (CORe) program, highlights the significance of regression. She states that regression analysis not only offers insights into the nature of these relationships but also provides measures of how well the data align with these relationships. These insights are exceptionally valuable when scrutinizing historical trends and crafting forecasts that can inform strategic decision-making (What Is Predictive Analytics? 5 Examples | HBS Online, 2021).</p>
+<p><br>
+Forecasting, driven by predictive analytics, equips organizations with the ability to make more informed decisions and develop data-driven strategies. To illustrate the practical utility of predictive analytics, here are several real-world examples that can inspire you to leverage this approach within your own organization.</p>
+<p><br>
+Numerous regression algorithms are available, each tailored to different data types and modeling requirements. Some of the most widely used regression algorithms encompass:</p>
+<ul>
+<li><strong>Linear Regression:</strong> A fundamental approach that establishes a linear relationship between variables.</li>
+<li><strong>Logistic Regression:</strong> Ideal for binary classification tasks where the outcome is categorical.</li>
+<li><strong>Polynomial Regression:</strong> Useful for modeling nonlinear relationships by incorporating polynomial terms.</li>
+<li><strong>Support Vector Regression:</strong> Incorporates support vector machine principles for regression tasks.</li>
+<li><strong>Decision Tree Regression:</strong> Utilizes decision tree structures to represent complex relationships.</li>
+</ul>
+<h3 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">¶</a></h3>
+<p>Regression in data analytics is a statistical technique that plays a crucial role in modelling the relationship between one or more independent variables and a dependent variable. Its primary objective is to establish a functional form that effectively characterizes the association between these variables, enabling the prediction of the dependent variable's value based on the values of the independent variables.</p>
+<p><br>
+Regression analysis operates within the framework of supervised learning, meaning it relies on labelled data for training. In this training phase, each data point provides information about both the dependent and independent variables. Subsequently, once the model is adequately trained, it becomes capable of forecasting the dependent variable's values for new data points, where only the independent variables are known.</p>
+<p><br>
+Regression analysis finds extensive applications across various industries and fields, making it an indispensable tool in data mining and machine learning. For instance, regression can be employed to:</p>
+<p><br>
+<strong>1. Predict Future Sales:</strong> In retail, historical sales data and additional factors like marketing expenditures, economic indicators, and competitor activity can be utilized to create a regression model that predicts future sales trends.</p>
+<p><br>
+<strong>2.   Forecast Customer Demand:</strong> Businesses can anticipate customer demand by analysing historical demand patterns alongside variables such as promotions, seasonal trends, and market conditions.</p>
+<p><br>
+<strong>3.   Identify Influencing Factors on Customer Satisfaction:</strong> By examining customer satisfaction scores in relation to various factors like product quality, customer support, and pricing, regression can uncover the most influential drivers.</p>
+<p><br>
+<strong>4.   Evaluate Marketing Campaign Impact:</strong> Regression helps assess the effectiveness of marketing efforts by correlating campaign metrics (e.g., ad spend, impressions) with outcomes such as sales or website traffic.</p>
+<p><br>
+<strong>5.   Develop Pricing Models:</strong> Companies can optimize pricing strategies by considering factors like production costs, competitor prices, and customer demand using regression models.</p>
+<p>The selection of the most appropriate regression algorithm hinges on the specific problem at hand and the characteristics of the data. To illustrate, consider a marketing firm aiming to predict future sales. By leveraging historical sales records alongside data on marketing expenditures, economic conditions, and competitors' actions, a regression model can be trained. This model can subsequently forecast sales for upcoming periods, aiding the company in making informed decisions regarding budget allocation, marketing strategies, and other business activities. In essence, regression serves as a versatile and indispensable tool in data analytics, providing insights and predictions across a broad spectrum of real-world challenges where relationships between variables exist.</p>
+<h3 id="steps-in-regression-analysis">Steps in Regression Analysis<a class="headerlink" href="#steps-in-regression-analysis" title="Permanent link">¶</a></h3>
+<p>Let's delve into an illustrative instance of employing regression analysis for analytics, focusing on predicting housing prices by considering various influencing factors.
+<br>
+Problem Statement: Consider a scenario where a real estate agency aspires to forecast the selling prices of homes within a specific neighbourhood. They have meticulously accumulated a dataset encompassing recent property sales, encompassing attributes such as the number of bedrooms, square footage, the presence of a garage, and the proximity to the nearest school. The agency's core objective is to construct a regression model capable of estimating a house's selling price predicated on these distinctive attributes.</p>
+<h4 id="stages-in-regression-analysis">Stages in Regression Analysis:<a class="headerlink" href="#stages-in-regression-analysis" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p><strong>1. Data Gathering:</strong> The initial phase entails collecting data on recent property transactions within the target locale. The dataset is replete with particulars pertaining to each property's unique characteristics, serving as independent variables, along with the actual sale prices, serving as the dependent variable.</p>
+</li>
+<li>
+<p><strong>2. Data Pre-processing:</strong> Before commencing regression analysis, meticulous data preparation is indispensable. This may necessitate addressing data anomalies such as missing values or outliers. Additionally, categorical variables, like the "presence of a garage," might necessitate transformation into numerical representations, a process often facilitated by techniques such as one-hot encoding.</p>
+</li>
+<li>
+<p><strong>3. Data Splitting:</strong> The dataset undergoes a bifurcation into two subsets: a training set and a testing set. The training set plays a pivotal role in training the regression model, while the testing set remains reserved for scrutinizing the model's predictive prowess.</p>
+</li>
+<li>
+<p><strong>4. Model Selection:</strong> The agency judiciously selects a regression algorithm that aligns with the specific task at hand. In this particular case, they opt for multiple linear regression, a fitting choice given its adeptness at forecasting a continuous target variable (in this context, the selling price) by considering multiple independent features.</p>
+</li>
+<li>
+<p><strong>5. Model Training:</strong> Subsequently, the multiple linear regression model undergoes training with the employment of the training dataset. During this phase, the model acquires insights into the intricate relationships existing between the independent variables (e.g., bedroom count, square footage) and the dependent variable (selling price).</p>
+</li>
+<li>
+<p><strong>6. Model Assessment:</strong> To gauge the model's performance, a slew of evaluation metrics tailored to regression tasks come into play. Common metrics encompass mean squared error (MSE), root mean squared error (RMSE), and R-squared (the coefficient of determination), offering an indication of how effectively the model accounts for data variance.</p>
+</li>
+<li>
+<p><strong>7. Prediction:</strong> Armed with the trained and evaluated regression model, the real estate agency is poised to generate predictions. For a novel property listing, the agency inputs the pertinent property attributes (independent variables) into the model, which, in turn, furnishes an estimated selling price (the dependent variable).</p>
+</li>
+<li>
+<p><strong>8. Refinement:</strong> Depending on the outcomes of the evaluation, the agency may embark on model fine-tuning endeavours. This could entail the adjustment of hyperparameters or the exploration of feature engineering methodologies, all in pursuit of enhancing the model's predictive accuracy and utility.</p>
+</li>
+</ul>
+<p><br>
+By adhering to these meticulous steps, the real estate agency ultimately forges a robust regression model, thereby arming itself with the capability to appraise housing prices for prospective listings within the neighbourhood. This predictive capacity not only benefits prospective buyers but also empowers sellers with the insight needed to make judicious decisions regarding real estate transactions in an informed and data-driven manner.</p>
+<h3 id="regression-in-business-world">Regression in Business World<a class="headerlink" href="#regression-in-business-world" title="Permanent link">¶</a></h3>
+<p>According to Redman, regression analysis is a fundamental and widely-used method in analytics that smart companies rely on for making informed decisions across various business challenges. Companies typically employ regression analysis to achieve three primary objectives: first, to elucidate and understand a phenomenon (e.g., explaining the drop in customer service calls); second, to make predictions about the future (e.g., forecasting sales trends over the next six months); and third, to make decisions (e.g., choosing between different promotional strategies). However, it's important to note the cautionary principle that "correlation is not causation" when using regression or similar analyses. Just because two factors are correlated doesn't necessarily imply a cause-and-effect relationship. For instance, while rain and monthly sales may be correlated, asserting that rain directly causes increased sales could be challenging to substantiate unless it's a product like umbrellas being sold (Amy Gallo, 2015).</p>
+<h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">¶</a></h2>
+<p>Classification is a data analysis process wherein information is organized into discrete categories based on specific characteristics or attributes. This method is employed to facilitate a clearer understanding of datasets by grouping related data points together. For instance, in email filtering, classification can be used to categorize incoming emails as either "spam" or "not spam" based on features such as keywords, sender information, and message content.</p>
+<p><br>
+Similarly, in medical diagnosis, classification algorithms can categorize patient records into different disease classes based on various clinical parameters, aiding doctors in making accurate diagnoses. In the context of predictive analytics, supervised machine learning models are often used for classification tasks, enabling automated decision-making based on data patterns. These models, through training on labelled examples, learn to distinguish between different categories and can then classify new, unseen data accordingly, making classification a valuable tool for various applications in data analysis and decision-making processes.</p>
+<p><br>
+The practical applications of classification span a multitude of industries and problem-solving domains, rendering valuable insights and streamlining processes. Here are notable instances:</p>
+<p><br></p>
+<p><strong>1.    Marketing:</strong> In marketing, classification facilitates customer segmentation, relying on diverse factors like demographics, purchase history, and online behaviour. For instance, an e-commerce platform might classify customers as "frequent shoppers," "occasional buyers," or "inactive users," enabling targeted marketing campaigns tailored to each group's preferences and behaviours.</p>
+<p><br></p>
+<p><strong>2.    Fraud Detection:</strong> In the financial sector, classification aids in distinguishing fraudulent transactions from legitimate ones. By scrutinizing historical data encompassing both fraudulent and valid transactions, classification models can promptly flag suspicious activities, contributing to the prevention of financial losses and the safeguarding of consumers.</p>
+<p><br></p>
+<p><strong>3.    Medical Diagnosis:</strong> Healthcare relies on classification for disease diagnosis. Medical practitioners input patient data encompassing symptoms, medical history, and diagnostic tests into a classification model. The model, in turn, categorizes patients into distinct disease categories, facilitating precise diagnoses and treatment recommendations.</p>
+<p><br></p>
+<p><strong>4.    Image Recognition:</strong> Classification serves as a linchpin in image recognition tasks. For example, in autonomous vehicles, cameras categorize objects on the road into classes such as "pedestrian," "vehicle," or "traffic sign." This information is critical for real-time decision-making and road safety.</p>
+<p><br></p>
+<p><strong>5.    Natural Language Processing (NLP):</strong> Within NLP, classification comes to the fore for text categorization. An email system, for instance, can classify incoming emails as "spam" or "not spam" based on content and characteristics, thereby enhancing email filtering.</p>
+<p><br>
+<em>To illustrate, let's delve into a pragmatic scenario employing classification in data analytics:</em></p>
+<p><br>
+Scenario: An e-commerce platform endeavors to mitigate customer churn, which refers to the rate at which customers cancel their subscriptions. The company aggregates customer data, including attributes like age, contract duration, customer service interactions, and payment history. Each customer is designated as either "churned" or "not churned" based on historical records.</p>
+<p><br>
+Application: Utilizing this dataset, the e-commerce platform leverages classification to construct a predictive model. This model, trained on the labeled data, becomes adept at evaluating the likelihood of churn for new customers. For instance, it can prognosticate that a newly acquired customer possesses a high probability of churning in the immediate future.</p>
+<p><br>
+Utilization: Empowered with this predictive capability, the company can proactively target at-risk customers with tailored retention strategies. This may encompass incentives, personalized offers, or heightened customer support, all geared towards diminishing churn rates and elevating customer loyalty.</p>
+<p><br>
+In summation, classification stands as a versatile and indispensable asset in the realm of data analytics. It empowers automated decision-making, the discernment of patterns, and adept problem-solving across multifarious domains. Whether the challenge at hand revolves around customer segmentation, fraud detection, medical diagnosis, image recognition, or text categorization, classification equips data analysts and machine learning practitioners to glean actionable insights and navigate the data landscape effectively (Rounak Sharma, 2023).</p>
+<h2 id="k-nearest-neighbors-k-nn">K-Nearest Neighbors (K-NN)<a class="headerlink" href="#k-nearest-neighbors-k-nn" title="Permanent link">¶</a></h2>
+<p>K-Nearest Neighbors (K-NN) is a simple, non-parametric, and lazy learning algorithm used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space.</p>
+<h3 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Non-parametric</strong>: K-NN does not assume a specific form for the underlying data distribution.</li>
+<li><strong>Lazy learning</strong>: It does not involve any training phase and computes the results only when a query is made.</li>
+<li><strong>Distance metric</strong>: Determines how to measure the similarity between instances. Common metrics include Euclidean distance, Manhattan distance, and Minkowski distance.</li>
+</ol>
+<h3 id="how-k-nn-works">How K-NN Works<a class="headerlink" href="#how-k-nn-works" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<dl>
+<dt><strong>Choose the number of neighbors <span class="arithmatex">\( k \)</span></strong>:</dt>
+<dd><span class="arithmatex">\( k \)</span> is the number of nearest neighbors to consider.</dd>
+<dd><span class="arithmatex">\( k \)</span> is typically an odd number to avoid ties in classification.</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt><strong>Calculate the distance</strong>:</dt>
+<dd>
+<ul>
+<li>Compute the distance between the query point and all the points in the training set using a chosen distance metric.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt><strong>Identify the nearest neighbors</strong>:</dt>
+<dd>
+<ul>
+<li>Sort all the distances and pick the k smallest ones.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt><strong>Classification/Regression</strong>:</dt>
+<dd>
+<ul>
+<li><strong>Classification</strong>: Assign the class label that is most frequent among the k nearest neighbors.</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li><strong>Regression</strong>: Average the values of the k nearest neighbors to predict the output.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<h3 id="example-k-nn-for-classification">Example: K-NN for Classification<a class="headerlink" href="#example-k-nn-for-classification" title="Permanent link">¶</a></h3>
+<p>Let's say we have a dataset of fruits characterized by their weight and color. We want to classify a new fruit based on these features.</p>
+<h4 id="dataset">Dataset<a class="headerlink" href="#dataset" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>Fruit</th>
+<th>Weight (g)</th>
+<th>Color (scale: 1 to 5)</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple</td>
+<td>150</td>
+<td>3</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td>160</td>
+<td>4</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>Lemon</td>
+<td>120</td>
+<td>2</td>
+<td>Lemon</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>110</td>
+<td>5</td>
+<td>Banana</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>140</td>
+<td>3</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td>170</td>
+<td>4</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>Lemon</td>
+<td>130</td>
+<td>2</td>
+<td>Lemon</td>
+</tr>
+</tbody>
+</table>
+<h4 id="new-fruit">New Fruit<a class="headerlink" href="#new-fruit" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Weight</strong>: 145 g</li>
+<li><strong>Color</strong>: 3</li>
+</ul>
+<h4 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">¶</a></h4>
+<ol>
+<li>
+<p><strong>Choose k</strong>: Let's choose <span class="arithmatex">\( k = 3 \)</span>.</p>
+</li>
+<li>
+<p><strong>Calculate distances</strong>: Using Euclidean distance:</p>
+<div class="arithmatex">\[ \text{Distance} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2} \]</div>
+<p>For each fruit in the dataset:</p>
+<div class="arithmatex">\[\begin{align*}
+ \text{Distance to Apple (150, 3)} &amp; = \sqrt{(150 - 145)^2 + (3 - 3)^2} = 5 \\
+ \text{Distance to Orange (160, 4)} &amp; = \sqrt{(160 - 145)^2 + (4 - 3)^2} = \sqrt{225 + 1} = \sqrt{226} \approx 15.03 \\
+ \text{Distance to Lemon (120, 2)} &amp; = \sqrt{(120 - 145)^2 + (2 - 3)^2} = \sqrt{625 + 1} = \sqrt{626} \approx 25.02 \\
+ \text{Distance to Banana (110, 5)} &amp; = \sqrt{(110 - 145)^2 + (5 - 3)^2} = \sqrt{1225 + 4} = \sqrt{1229} \approx 35.07 \\
+ \text{Distance to Apple (140, 3)} &amp; = \sqrt{(140 - 145)^2 + (3 - 3)^2} = 5 \\
+ \text{Distance to Orange (170, 4)} &amp; = \sqrt{(170 - 145)^2 + (4 - 3)^2} = \sqrt{625 + 1} = \sqrt{626} \approx 25.02 \\
+ \text{Distance to Lemon (130, 2)} &amp; = \sqrt{(130 - 145)^2 + (2 - 3)^2} = \sqrt{225 + 1} = \sqrt{226} \approx 15.03 \\
+ \end{align*}
+ \]</div>
+</li>
+<li>
+<p><strong>Identify the nearest neighbors</strong>:</p>
+</li>
+<li>
+<p>The three nearest neighbors are:</p>
+<ul>
+<li>Apple (150, 3) with distance 5</li>
+<li>Apple (140, 3) with distance 5</li>
+<li>Orange (160, 4) with distance ≈ 15.03</li>
+</ul>
+</li>
+<li>
+<p><strong>Classify</strong>:</p>
+</li>
+<li>The majority class among the nearest neighbors is "Apple".</li>
+</ol>
+<p>Thus, the new fruit is classified as an <strong>Apple</strong>.</p>
+<h3 id="choosing-the-right-k">Choosing the Right k<a class="headerlink" href="#choosing-the-right-k" title="Permanent link">¶</a></h3>
+<ul>
+<li>A small <span class="arithmatex">\( k \)</span> might be sensitive to noise in the dataset.</li>
+<li>A large <span class="arithmatex">\( k \)</span> might smooth out the boundary between classes too much.</li>
+</ul>
+<h3 id="applications-of-k-nn">Applications of K-NN<a class="headerlink" href="#applications-of-k-nn" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Image Recognition</strong>: K-NN can classify images based on pixel intensity features.</li>
+<li><strong>Recommendation Systems</strong>: It can recommend items based on user similarity.</li>
+<li><strong>Anomaly Detection</strong>: It can identify anomalies by comparing new instances to known ones.</li>
+<li><strong>Medical Diagnosis</strong>: K-NN can classify medical conditions based on patient history and symptoms.</li>
+</ol>
+<h3 id="advantages-and-disadvantages">Advantages and Disadvantages<a class="headerlink" href="#advantages-and-disadvantages" title="Permanent link">¶</a></h3>
+<p><strong>Advantages</strong>:
+- Simple to understand and implement.
+- No training phase (useful for small datasets).</p>
+<p><strong>Disadvantages</strong>:
+- Computationally expensive as it stores all training data.
+- Performance degrades with large datasets.
+- Sensitive to irrelevant or redundant features.</p>
+<p>K-NN is a foundational algorithm in machine learning that is intuitive and easy to implement, making it a useful tool for many basic classification and regression tasks.</p></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10_page/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction to Predictive Analytics and its applications">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction to Predictive Analytics and its applications
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../30_page/" class="md-footer__link md-footer__link--next" aria-label="Next: Evaluation and Interpretation of Predictive Models">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Evaluation and Interpretation of Predictive Models
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This documentation is hosted by <a href="https://ansis.com.sg/">ANSIS Pte Ltd (loh.wilson@gmail.com)</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "navigation.path", "tabs"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/atom.js"></script>
+      
+        <script src="../../../javascripts/misc.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
