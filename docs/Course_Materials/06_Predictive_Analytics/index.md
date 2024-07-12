@@ -18,3 +18,59 @@ The term "analytics" has become a broad umbrella encompassing various business i
 - **Prescriptive analytics** represents a more advanced approach that offers recommendations to decision-makers by addressing the question, "What should be done?" Techniques like simulation, recommendation engines, and optimization methods are utilized to develop prescriptive models. Nonetheless, accurate predictive models are fundamental prerequisites for constructing prescriptive models.
 
 Each type of business analytics serves a unique purpose and provides valuable insights that help organizations make data-driven decisions. By leveraging these analytics, companies can gain a competitive edge, improve operational efficiency, and better meet the needs of their customers.   (The Four Types of Business Analytics: Driving Better Business Decisions, 2023).
+
+## Lecture Guidance
+
+### Basic Introduction of Predictive Analytics
+![](./2024-07-12-23-08-33.png)
+
+### 3 Type of Predictive Analytics
+![](./2024-07-12-23-08-44.png)
+
+### Why not use Excel
+![](./2024-07-12-23-13-19.png)
+
+### Algos Supporting a Predictable Operations
+![](./2024-07-12-23-14-19.png)
+
+### Simple Illustration of Predictive Analytics
+![](./2024-07-12-23-16-20.png)
+
+### Machine Learning
+![](./2024-07-12-23-16-55.png)
+
+### Supervised Learning
+![](./2024-07-12-23-17-24.png)
+
+### Differences between Regression and Classification
+![](./2024-07-12-23-18-53.png)
+
+### Measuring Regression Performance
+![](./2024-07-12-23-19-42.png)
+
+### Measuring Classification Performance
+![](./2024-07-12-23-20-36.png)
+
+### More on Measuring Classification Performance
+![](./2024-07-12-23-21-06.png)
+
+### Other Evaluation Metrics
+![](./2024-07-12-23-22-12.png)
+
+### More on Other Evaluation Metrics
+![](./2024-07-12-23-23-48.png)
+
+### Supervised Learning for Forecasting
+![](./2024-07-12-23-24-43.png)
+
+### Example of Supervised Learning
+![](./2024-07-12-23-25-42.png)
+
+### Example of Supervised and Unsupervised Learning
+![](./2024-07-12-23-28-20.png)
+
+### Journey of Predictive Analytics
+![](./2024-07-12-23-26-18.png)
+
+### The Big Picture of Predictive Analytics
+![](./2024-07-12-23-27-12.png)
