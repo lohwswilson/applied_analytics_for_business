@@ -1,0 +1,2236 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="['Wilson Loh']">
+      
+      
+        <link rel="canonical" href="https://ansis-ai.github.io/applied_analytics_for_business/Course_Materials/08_Analytics_in_Financial_Decision_Making/10_page/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../20_page/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+  <title>ANSIS</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Adlam+Unjoined:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans Adlam Unjoined";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/output.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Financial Data Analytics - Applied Analytics for Business" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://ansis-ai.github.io/applied_analytics_for_business/assets/images/social/Course_Materials/08_Analytics_in_Financial_Decision_Making/10_page.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://ansis-ai.github.io/applied_analytics_for_business/Course_Materials/08_Analytics_in_Financial_Decision_Making/10_page/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Financial Data Analytics - Applied Analytics for Business" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://ansis-ai.github.io/applied_analytics_for_business/assets/images/social/Course_Materials/08_Analytics_in_Financial_Decision_Making/10_page.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-finance-triangle" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://ansis.com.sg" title="Applied Analytics for Business" class="md-header__button md-logo" aria-label="Applied Analytics for Business" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Applied Analytics for Business
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Financial Data Analytics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ansis-ai/applied_analytics_for_business.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ansis-ai/applied_analytics_for_business.git
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Module Information
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Course Materials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Course_Activities/" class="md-tabs__link">
+          
+  
+    
+  
+  Course Activities
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://ansis.com.sg" title="Applied Analytics for Business" class="md-nav__button md-logo" aria-label="Applied Analytics for Business" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Applied Analytics for Business
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ansis-ai/applied_analytics_for_business.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ansis-ai/applied_analytics_for_business.git
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Course Materials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course Materials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction to Business Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction to Business Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/13_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benefits and Challenges in Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data for Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business Analytics Techniques and Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/50_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem Solving with Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Introduction_to_Business_Analytics/60_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application of Business Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Descriptive Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Descriptive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Descriptve Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Driven vs Model Driven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Quality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Descriptive_Analytics/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descriptive Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Chart Types and Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Data_Visualization/40_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visual Encoding and Design Principles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Dashboarding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Dashboarding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Data_Dashboarding/10_Page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Dashboarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Mining Techniques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data Mining Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Data Mining
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Mining Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_Data_Mining_Techniques/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Data Mining Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../06_Predictive_Analytics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Predictive Analytics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Predictive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Predictive_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Predictive Analytics and its applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Predictive_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Predictive Modeling Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Predictive_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation and Interpretation of Predictive Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07_Prescriptive_Analytics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Prescriptive Analytics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Prescriptive Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive_Analytics/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Prescriptive Analytics and its applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive_Analytics/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Techniques for Optimization and Decision Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_Prescriptive_Analytics/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identyfing Optimal Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Analytics in Financial Decision Making
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Analytics in Financial Decision Making
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Financial Data Analytics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Financial Data Analytics
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-finance-triangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Finance Triangle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-evolution-of-financial-data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Evolution of Financial Data Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-using-analytics-in-financial-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Using Analytics in Financial Decision-Making
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../09_Business_Analytics_in_Marketing/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Business Analytics in Marketing
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Business Analytics in Marketing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_Business_Analytics_in_Marketing/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Segmentation and Profiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_Business_Analytics_in_Marketing/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Marketing Campaign Analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_Business_Analytics_in_Marketing/30_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Lifetime Value Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../10_Industry_Application/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Indusry Applications
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Indusry Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_Industry_Application/10_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Driven Solutions and Recommendations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_Industry_Application/20_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presenting Findings and Insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Course_Activities/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Course Activities
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Course Activities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-finance-triangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Finance Triangle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-evolution-of-financial-data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Evolution of Financial Data Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-using-analytics-in-financial-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Using Analytics in Financial Decision-Making
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Financial Data Analytics</h1>
+
+<div><h2 id="the-finance-triangle">The Finance Triangle<a class="headerlink" href="#the-finance-triangle" title="Permanent link">¶</a></h2>
+<p>As financial departments face growing demands on their resources and the value they provide, it becomes crucial to strike the right equilibrium between generating insights, ensuring compliance and control, and optimizing efficiency. Here are some examples of how this balance can be achieved:</p>
+<ol>
+<li>
+<p><strong>Business Insights:</strong> In order to support decision-making by business managers, financial functions should provide relevant, accurate, and timely Key Performance Indicators (KPIs). For instance, a retail company might offer sales data broken down by product category and region, enabling managers to identify top-performing products and allocate resources accordingly.</p>
+</li>
+<li>
+<p><strong>Efficiency:</strong> Efficiency can be enhanced through the elimination of wasteful processes, standardization of workflows, and automation of routine tasks. Consider a manufacturing company that automates inventory management, reducing manual data entry and minimizing the risk of stockouts or overstock situations, thereby freeing up resources for more value-adding activities.</p>
+</li>
+<li>
+<p><strong>Compliance and Control:</strong> Financial functions must establish sustainable and flexible control mechanisms to meet both current and future obligations. For example, a financial institution may implement rigorous data security protocols and regular audits to ensure compliance with evolving data protection regulations while maintaining flexibility to adapt to future regulatory changes.</p>
+</li>
+</ol>
+<p>In summary, achieving the right balance among business insights, efficiency, and compliance and control is essential for a finance department to meet the evolving needs of an organization effectively. By providing timely insights, optimizing efficiency, and maintaining robust control measures, financial functions contribute significantly to an organization's overall success (PwC, 2018).</p>
+<h2 id="the-evolution-of-financial-data-analytics">The Evolution of Financial Data Analytics<a class="headerlink" href="#the-evolution-of-financial-data-analytics" title="Permanent link">¶</a></h2>
+<p>Financial data analytics has come a long way since its inception. Initially, financial analyses relied on manual methods involving spreadsheets and calculations, which often led to inaccuracies and inefficiencies due to human errors. As technology advanced, so did the ability of financial institutions to analyse their data with greater efficiency and precision.</p>
+<p><br>
+The advent of big data has empowered finance companies to swiftly make data-driven decisions by processing vast amounts of structured and unstructured data from various sources, including social media, web activity, and customer records. Many finance firms now employ advanced analytics techniques like machine learning to unearth hidden trends within extensive datasets, enhancing their decision-making capabilities.</p>
+<p><br>
+Today, financial data analytics provides businesses with deeper insights into their finances, enabling more informed and prudent decision-making. This heightened level of understanding forms the basis for the significant advantages offered by the use of financial data analytics (Team Iris Carbon, 2023).</p>
+<h2 id="benefits-of-using-analytics-in-financial-decision-making">Benefits of Using Analytics in Financial Decision-Making<a class="headerlink" href="#benefits-of-using-analytics-in-financial-decision-making" title="Permanent link">¶</a></h2>
+<ol>
+<li>Improved Decision Quality:</li>
+</ol>
+<p>Analytics empowers businesses to make better decisions by providing them with accurate, timely, and data-driven insights. This leads to more informed and effective choices in various aspects of financial management, from investment strategies to operational decisions.</p>
+<p>Example: A financial institution uses analytics to analyse historical market data, economic indicators, and customer behaviour to make investment decisions. By accurately predicting market trends, they make profitable investment choices, resulting in improved portfolio performance.</p>
+<ol>
+<li>Reduced Costs:</li>
+</ol>
+<p>Analytics plays a crucial role in identifying inefficiencies and areas of waste within a business. By pinpointing these inefficiencies, organizations can take corrective actions to reduce costs and optimize resource allocation.</p>
+<p>Example: A manufacturing company utilizes analytics to monitor its production processes in real-time. By identifying bottlenecks and optimizing production schedules, they reduce production costs and improve overall efficiency.</p>
+<ol>
+<li>Increased Revenue:</li>
+</ol>
+<p>Analytics is instrumental in identifying new business opportunities, refining marketing strategies, and making sales decisions. This, in turn, can lead to revenue growth by targeting the right audience and optimizing pricing strategies.</p>
+<p>Example: An e-commerce platform employs analytics to analyse customer data, including browsing history and purchase behaviour. By offering personalized product recommendations and discounts, they increase conversion rates and revenue per customer.</p>
+<ol>
+<li>Improved Risk Management:
+Analytics assists businesses in identifying, assessing, and mitigating risks effectively. By analysing historical and real-time data, organizations can develop strategies to manage risks and protect both their customers and themselves.</li>
+</ol>
+<p>Example: An insurance company uses analytics to assess customer profiles, claims data, and market conditions. This helps them accurately price policies, manage risk exposure, and reduce fraudulent claims, ultimately improving their financial stability.</p>
+<p>In conclusion, the benefits of using analytics in financial decision-making are multifaceted. Analytics enhances decision quality, reduces costs, increases revenue, and improves risk management. These advantages are realized through a wide range of applications across industries, as demonstrated by businesses like Netflix, Amazon, and JPMorgan Chase, which leverage analytics to achieve remarkable results in their financial operations.</p>
+<p>Financial Data Analytics</p>
+<p>Financial data analytics is a comprehensive process that involves the systematic collection, thorough cleansing, and rigorous examination of financial data with the primary aim of extracting valuable insights to inform and enhance business decision-making. It relies on a diverse set of statistical and machine learning techniques to uncover intricate patterns, trends, and meaningful relationships hidden within the financial information.</p>
+<p>Here are some specific scenarios where financial data analytics can make a substantial impact:</p>
+<ol>
+<li>Identifying Key Financial Performance Indicators (KPIs): Companies often track a multitude of financial metrics, but not all of them are equally significant. By employing financial data analytics, an organization can pinpoint the specific KPIs that truly matter for its growth and success. For instance, a retail business might discover that same-store sales growth and customer acquisition cost are the most crucial KPIs to monitor.</li>
+<li>Assessing Strengths and Weaknesses: Financial data analytics can help a company assess its strengths and weaknesses across various facets of its operations. For example, through data analysis, a manufacturing company may realize that it excels in producing a particular product line efficiently but faces challenges in managing its supply chain effectively.</li>
+<li>Identifying Opportunities and Risks: By analysing historical financial data and market trends, financial analysts can identify potential growth opportunities and risks. For instance, a technology company may use analytics to recognize emerging markets where its products have strong growth potential or anticipate market downturns.</li>
+<li>Improving Profitability and Efficiency: Financial data analytics can uncover inefficiencies and cost-saving opportunities within a company's operations. For example, a logistics company might analyse its data to optimize routes and reduce fuel costs, ultimately improving profitability.</li>
+<li>Resource Allocation: Allocating resources effectively is crucial for any organization. Financial data analytics can provide insights into which projects or departments yield the highest returns, aiding in better resource allocation. For instance, a software company may use analytics to determine whether it should invest more in research and development or sales and marketing.</li>
+</ol>
+<p>Professionals across various fields leverage financial data analytics to make informed decisions. Here's how it benefits different roles:</p>
+<p>•   Financial Analysts: They use data analytics to evaluate a company's financial health, assess investment opportunities, and provide insights to support investment decisions.
+•   Accountants: Accountants can use data analytics to detect financial irregularities and fraud through anomaly detection techniques, ensuring financial transparency and integrity.
+•   Investment Managers: These professionals rely on data analytics to make investment decisions, optimize portfolios, and manage risks effectively.
+•   Business Leaders: CEOs and top executives use financial data analytics to steer the company in the right direction, aligning strategies with data-driven insights.</p>
+<p>In essence, financial data analytics is an indispensable tool that empowers businesses to harness the full potential of their financial information, driving informed decision-making at every level and ultimately contributing to long-term success.</p>
+<p>Data analytics in financial decision-making, along with examples for each aspect:</p>
+<ol>
+<li>
+<p>Budgeting and Forecasting: Analytics plays a crucial role in budgeting and forecasting by providing a data-driven approach to financial planning. By analysing historical financial data and market trends, organizations can create more accurate and realistic budgets and forecasts. For example, a retail company may use sales data from previous years and economic indicators to predict future sales figures, helping them allocate resources more effectively.</p>
+</li>
+<li>
+<p>Investment and Risk Management: Analytics is instrumental in investment decision-making and risk management. For instance, an investment firm might use advanced financial models and historical market data to assess the potential return and associated risks of a particular investment. This enables them to make informed decisions about portfolio allocation and risk mitigation strategies.</p>
+</li>
+<li>
+<p>Pricing Strategy and Product Development: Businesses leverage analytics to determine optimal pricing strategies for their products or services. They analyse customer behaviour, competitor pricing, and market demand to set prices that maximize profitability. For instance, a software company might use analytics to determine the price point for a new software product based on its features and the pricing of similar products in the market.</p>
+</li>
+<li>
+<p>Cost Reduction and Operational Efficiency: Analytics helps organizations identify inefficiencies and areas of cost reduction within their operations. By analysing data on production processes, supply chain logistics, and resource utilization, companies can streamline their operations and reduce costs. An example would be a manufacturing company using analytics to optimize its supply chain, reducing inventory carrying costs and transportation expenses.</p>
+</li>
+<li>
+<p>Fraud Detection and Prevention: Financial data analytics is a powerful tool for detecting and preventing fraud. Banks and financial institutions, for instance, use analytics to monitor transactions and identify suspicious patterns indicative of fraudulent activity. For example, if a credit card company notices a series of unusual transactions on a customer's account—such as multiple large purchases in a short period—it may trigger an alert for further investigation to prevent potential fraud.</p>
+</li>
+</ol>
+<p>In all these scenarios, analytics involves collecting relevant financial data, cleaning and preparing the data for analysis, applying statistical and machine learning techniques, and deriving actionable insights. These insights empower organizations to make well-informed financial decisions, manage risks effectively, optimize resource allocation, and enhance overall financial performance.</p>
+<p>The specific tools and methods used for financial data analytics may vary depending on the organization's needs and resources. However, the overarching goal remains the same: leveraging data to make smarter financial decisions and ultimately achieve better outcomes.</p>
+<p>Data Sources for Financial Analytics</p>
+<p>These sources of data for financial analytics in more detail, along with examples for each:</p>
+<ol>
+<li>
+<p>Financial Statements: Financial statements are the backbone of financial analytics as they provide a comprehensive view of a company's financial health and performance. The three primary financial statements are:
+•   Balance Sheet: A balance sheet displays a company's assets, liabilities, and shareholders' equity at a specific point in time. It helps assess a company's financial stability. For instance, if a company's balance sheet shows a strong cash position and low debt, it may be considered financially healthy.
+•   Income Statement: An income statement summarizes a company's revenues, expenses, and profits over a defined period. It helps analyze profitability. For example, if a company's income statement reveals consistent revenue growth and increasing profit margins, it may indicate strong financial performance.
+•   Cash Flow Statement: A cash flow statement details the cash inflows and outflows from operating, investing, and financing activities. It is essential for assessing liquidity. If a company's cash flow statement shows a consistent positive cash flow from operations, it suggests that it can cover its financial obligations.</p>
+</li>
+<li>
+<p>Market Data: Market data includes information on financial instruments, such as stocks, bonds, and commodities. It is vital for investment analysis and tracking market trends.
+•   Stock Prices: Investors use stock prices to monitor the performance of individual stocks or portfolios. For instance, if a tech company's stock price rises significantly after a product launch, it may indicate investor confidence and potential growth.
+•   Bond Yields: Bond yields reflect the return on investment for bonds. Analyzing bond yields helps investors assess risk and potential income from fixed-income securities.
+•   Commodity Prices: Commodity prices, like oil or gold, affect industries that rely on raw materials. For example, an increase in oil prices can impact the profitability of airlines due to higher fuel costs.</p>
+</li>
+<li>
+<p>Industry Data: Industry data allows companies to benchmark their performance against peers and understand broader industry trends.
+•   Competitor Analysis: A retailer can use industry data to compare its sales growth, market share, and profitability to competitors. If it lags behind in specific metrics, it may need to adjust its strategy.
+•   Trend Identification: Analysing industry data might reveal emerging trends, such as a shift towards sustainable practices. A manufacturer can use this information to adapt its production methods and remain competitive.</p>
+</li>
+<li>
+<p>Economic Data: Economic data provides insights into the broader economic environment in which a company operates.
+•   GDP Growth: A country's GDP growth rate affects consumer spending and overall economic health. For instance, if a country experiences robust GDP growth, companies may anticipate increased consumer demand for their products.
+•   Inflation Rate: High inflation can erode purchasing power, affecting pricing strategies. A retailer may adjust prices in response to rising inflation to maintain profit margins.
+•   Unemployment Rates: High unemployment rates may lead to reduced consumer spending, impacting businesses in sectors dependent on consumer demand.</p>
+</li>
+</ol>
+<p>In summary, these sources of data are invaluable for financial analytics. By analysing financial statements, market data, industry data, and economic indicators, organizations gain a holistic understanding of their financial performance, market dynamics, and the broader economic context. This information informs strategic decisions, risk management, and investment strategies, ultimately contributing to more informed and effective financial decision-making.</p>
+<p>When selecting data sources for financial analytics, several critical factors need consideration to ensure the effectiveness of the analysis:</p>
+<ol>
+<li>
+<p>Accuracy: Accuracy is paramount in financial analytics. The data used must be precise and trustworthy. For example, when analysing stock market data, even a small error in stock prices can lead to incorrect investment decisions. Accuracy ensures that the insights drawn from the data are valid and reliable.</p>
+</li>
+<li>
+<p>Completeness: Data completeness is essential to gain a comprehensive understanding of financial situations. Incomplete data can lead to biased conclusions. For instance, when evaluating a company's financial health, missing information in its financial statements may result in an incomplete picture, making it challenging to make informed decisions.</p>
+</li>
+<li>
+<p>Timeliness: Timely data is critical for making real-time financial decisions. For instance, traders rely on up-to-the-minute stock price data to execute trades at the right moment. Delays in accessing financial data can lead to missed opportunities or increased risks.</p>
+</li>
+<li>
+<p>Accessibility: Data accessibility ensures that analysts and decision-makers can easily retrieve and utilize the data. Complex or inaccessible data can hinder the analysis process. For instance, an investment manager needs user-friendly access to market data to make swift decisions based on changing market conditions.</p>
+</li>
+<li>
+<p>Cost: The affordability of data is a practical consideration. Financial data sources should provide value relative to their cost. For example, subscribing to a financial data service should offer insights and benefits that justify the expense incurred.</p>
+</li>
+</ol>
+<p>In summary, the careful selection of data sources is pivotal in financial analytics. Accuracy, completeness, timeliness, accessibility, and cost-effectiveness are vital criteria. These factors ensure that financial decisions are based on reliable, comprehensive, and current information, enabling organizations and individuals to make sound choices and manage financial risks effectively.</p></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Analytics in Financial Decision Making">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Analytics in Financial Decision Making
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20_page/" class="md-footer__link md-footer__link--next" aria-label="Next: Risk Analytics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Risk Analytics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This documentation is hosted by <a href="https://ansis.com.sg/">ANSIS Pte Ltd (loh.wilson@gmail.com)</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "navigation.path", "tabs"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/atom.js"></script>
+      
+        <script src="../../../javascripts/misc.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
